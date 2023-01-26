@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [map, setMap] = useState({});
+
+  useEffect(() => {
+    let map = tt.map({
+      key: process.env.REACT_APP_TOMTOM_API_KEY,
+      container: mapElement,
+    });
+
+    setMap(map);
+
+      }, []); 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+
     </div>
   );
 }
