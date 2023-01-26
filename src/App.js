@@ -11,6 +11,7 @@ function App() {
   const [latitude, setLatitude] = useState(0);
 
   useEffect(() => {
+
     let map = tt.map({
       key: process.env.REACT_APP_TOMTOM_API_KEY,
       container: mapElement,
@@ -24,8 +25,9 @@ function App() {
     });
 
     setMap(map);
+    return () => map.remove();
 
-      }, []); 
+      }, [longitude, latitude]); 
   return (
     <div className="app">
       <div ref={mapElement} className = "map">
