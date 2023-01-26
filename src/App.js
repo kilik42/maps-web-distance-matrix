@@ -28,7 +28,23 @@ function App() {
       }, []); 
   return (
     <div className="app">
-      <div ref={mapElement} className = "map"></div>
+      <div ref={mapElement} className = "map">
+        <div className='search=-bar'>
+          <h1>where to?</h1>
+          <input type="text" 
+          id="longitude"
+          className='longitude'
+          placeholder="put in longitude"
+          onChange={(e) => {setLongitude(e.target.value)}}
+          />
+          <input type="text"  
+          id ="latitude"
+          className='latitude'
+          placeholder="put in latitude"
+          onChange={(e) => {setLatitude (e.target.value)}}
+          />
+        </div>
+      </div>
 
     </div>
   );
